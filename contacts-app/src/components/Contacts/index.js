@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react'
+import "./styles.css"
+
 import List from './List'
 import Form from './Form'
+
 
 function Contacts() {
   const [contacts, setContacts] = useState([
@@ -23,7 +26,8 @@ function Contacts() {
   }, [contacts])   // formu ekledikten sonra forma kaydedilenlerin bulunduğu arrayin son halini görüntüleyebilmek için useEffect kullanıldı.
 
   return (
-    <div>
+    <div id="container">
+      <h1>Contacts</h1>
       <List contacts={contacts} />
       <Form addContact={setContacts} contacts={contacts} />    {/*forma daha önce yüklenenleri de görmek için contacts={contacts} eklenir. */}
     </div>

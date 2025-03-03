@@ -22,11 +22,15 @@ function List({ contacts }) {
           onChange={(e) => setFilterText(e.target.value)} 
       />
 
-      <ul>
+      <ul className='list'>
         {filtered.map((contact, i) => (
-          <li key={i}> {contact.fullName}</li>)   // harf veya numara arasak da sadece ait isim diğerini göstermek istemediğimiz için
+          <li key={i}> 
+          <span>{contact.fullName}</span>
+          <span>{contact.phone_number}</span>
+          </li>)   // harf veya numara arasak da sadece ait isim diğerini göstermek istemediğimiz için
           )}
       </ul>
+      <p>Total contacts ({filtered.length})</p>
     </div>
   )
 }
